@@ -4,7 +4,6 @@ try
 {
     using var sr = new StreamReader("F:\\Documents\\AdventOfCode\\Day02.Part1\\input");
     string? line;
-    var current = 0;
     while ((line = sr.ReadLine()) != null)
     {
         // A == 65
