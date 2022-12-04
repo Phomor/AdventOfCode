@@ -4,7 +4,7 @@ var max3 = 0;
 
 try
 {
-    using var sr = new StreamReader("F:\\Documents\\AdventOfCode\\Day01.Part1\\input");
+    using var sr = new StreamReader("F:\\Documents\\AdventOfCode\\Day01.Part2\\input");
     string? line;
     var current = 0;
     while ((line = sr.ReadLine()) != null)
@@ -43,6 +43,6 @@ try
 }
 catch (IOException ex)
 {
-    Console.WriteLine("File coult not be read");
+    Console.WriteLine("File could not be read");
     Console.WriteLine(ex.ToString());
 }

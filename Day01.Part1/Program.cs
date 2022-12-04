@@ -24,6 +24,6 @@ try
 }
 catch (IOException ex)
 {
-    Console.WriteLine("File coult not be read");
+    Console.WriteLine("File could not be read");
     Console.WriteLine(ex.ToString());
 }
