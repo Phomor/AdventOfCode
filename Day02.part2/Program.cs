@@ -19,7 +19,7 @@ catch (IOException ex)
     Console.WriteLine(ex.ToString());
 }
 
-class Game
+static class Game
 {
     public static int Play(HandShape theirs, Outcome outcome)
     {
