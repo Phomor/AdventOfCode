@@ -1,22 +1,14 @@
 ﻿var score = 0;
 
-try
+using var sr = new StreamReader("input");
+string? line;
+while ((line = sr.ReadLine()) != null)
 {
-    using var sr = new StreamReader("F:\\Documents\\AdventOfCode\\Day03.Part1\\input");
-    string? line;
-    while ((line = sr.ReadLine()) != null)
-    {
-        var r = new Rucksack(line);
-        score += r.FindError();
-    }
+    var r = new Rucksack(line);
+    score += r.FindError();
+}
 
-    Console.WriteLine(score);
-}
-catch (IOException ex)
-{
-    Console.WriteLine("File could not be read");
-    Console.WriteLine(ex.ToString());
-}
+Console.WriteLine(score);
 
 class Rucksack
 {

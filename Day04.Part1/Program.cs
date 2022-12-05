@@ -1,26 +1,18 @@
 ﻿var score = 0;
 
-try
+using var sr = new StreamReader("input");
+string? line;
+while ((line = sr.ReadLine()) != null)
 {
-    using var sr = new StreamReader("F:\\Documents\\AdventOfCode\\Day04.Part1\\input");
-    string? line;
-    while ((line = sr.ReadLine()) != null)
+    var ass1 = new Assignment(line[..line.IndexOf(",")]);
+    var ass2 = new Assignment(line[(line.IndexOf(",") + 1)..]);
+    if (ass1.IsContained(ass2))
     {
-        var ass1 = new Assignment(line[..line.IndexOf(",")]);
-        var ass2 = new Assignment(line[(line.IndexOf(",") + 1)..]);
-        if (ass1.IsContained(ass2))
-        {
-            score++;
-        }
+        score++;
     }
+}
 
-    Console.WriteLine(score);
-}
-catch (IOException ex)
-{
-    Console.WriteLine("File could not be read");
-    Console.WriteLine(ex.ToString());
-}
+Console.WriteLine(score);
 
 class Assignment
 {

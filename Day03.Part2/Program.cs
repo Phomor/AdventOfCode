@@ -1,41 +1,33 @@
 ﻿var score = 0;
 
-try
+using var sr = new StreamReader("input");
+string? line;
+Rucksack? r1 = null;
+Rucksack? r2 = null;
+Rucksack? r3 = null;
+while ((line = sr.ReadLine()) != null)
 {
-    using var sr = new StreamReader("F:\\Documents\\AdventOfCode\\Day03.Part2\\input");
-    string? line;
-    Rucksack? r1 = null;
-    Rucksack? r2 = null;
-    Rucksack? r3 = null;
-    while ((line = sr.ReadLine()) != null)
+    if (r1 == null)
     {
-        if (r1 == null)
-        {
-            r1 = new Rucksack(line);
-            continue;
-        }
-        if (r2 == null)
-        {
-            r2 = new Rucksack(line);
-            continue;
-        }
-        if (r3 == null)
-        {
-            r3 = new Rucksack(line);
-            score += Rucksack.FindBadgeType(r1, r2, r3);
-            r1 = null;
-            r2 = null;
-            r3 = null;
-        }
+        r1 = new Rucksack(line);
+        continue;
     }
+    if (r2 == null)
+    {
+        r2 = new Rucksack(line);
+        continue;
+    }
+    if (r3 == null)
+    {
+        r3 = new Rucksack(line);
+        score += Rucksack.FindBadgeType(r1, r2, r3);
+        r1 = null;
+        r2 = null;
+        r3 = null;
+    }
+}
 
-    Console.WriteLine(score);
-}
-catch (IOException ex)
-{
-    Console.WriteLine("File could not be read");
-    Console.WriteLine(ex.ToString());
-}
+Console.WriteLine(score);
 
 class Rucksack
 {

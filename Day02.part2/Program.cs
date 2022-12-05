@@ -1,23 +1,15 @@
 ﻿var score = 0;
 
-try
+using var sr = new StreamReader("input");
+string? line;
+while ((line = sr.ReadLine()) != null)
 {
-    using var sr = new StreamReader("F:\\Documents\\AdventOfCode\\Day02.Part2\\input");
-    string? line;
-    while ((line = sr.ReadLine()) != null)
-    {
-        // A == 65
-        // X == 88
-        score += Game.Play((HandShape) (line.First() - 64), (Outcome)(line.Last() - 87));
-    }
+    // A == 65
+    // X == 88
+    score += Game.Play((HandShape) (line.First() - 64), (Outcome)(line.Last() - 87));
+}
 
-    Console.WriteLine(score);
-}
-catch (IOException ex)
-{
-    Console.WriteLine("File could not be read");
-    Console.WriteLine(ex.ToString());
-}
+Console.WriteLine(score);
 
 static class Game
 {

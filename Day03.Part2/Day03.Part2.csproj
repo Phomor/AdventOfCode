@@ -8,4 +8,10 @@
         <RootNamespace>Day03Part2</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Update="input">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
