@@ -1,6 +1,6 @@
 ﻿var score = 0;
 
-using var sr = new StreamReader("F:\\Documents\\AdventOfCode\\Day04.Part2\\input");
+using var sr = new StreamReader("input");
 string? line;
 while ((line = sr.ReadLine()) != null)
 {
