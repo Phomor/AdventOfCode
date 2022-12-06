@@ -1,5 +1,3 @@
-var score = 0;
-
 using var sr = new StreamReader("input");
 string? line;
 var initial = new Stack<string>();
