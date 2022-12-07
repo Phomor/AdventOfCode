@@ -24,6 +24,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day06.Part1", "Day06.Part1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day06.Part2", "Day06.Part2\Day06.Part2.csproj", "{B4D78860-1AAF-4DC9-93D4-8068980B9943}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day07.Part1", "Day07.Part1\Day07.Part1.csproj", "{8D9ABF4F-B490-4EBD-B20D-CACD4B4223CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day07.Part2", "Day07.Part2\Day07.Part2.csproj", "{441E1489-CB77-4C2C-B1E9-0417F4C295CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,5 +82,13 @@ Global
 		{B4D78860-1AAF-4DC9-93D4-8068980B9943}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4D78860-1AAF-4DC9-93D4-8068980B9943}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4D78860-1AAF-4DC9-93D4-8068980B9943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9ABF4F-B490-4EBD-B20D-CACD4B4223CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9ABF4F-B490-4EBD-B20D-CACD4B4223CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9ABF4F-B490-4EBD-B20D-CACD4B4223CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9ABF4F-B490-4EBD-B20D-CACD4B4223CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{441E1489-CB77-4C2C-B1E9-0417F4C295CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441E1489-CB77-4C2C-B1E9-0417F4C295CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441E1489-CB77-4C2C-B1E9-0417F4C295CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441E1489-CB77-4C2C-B1E9-0417F4C295CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
