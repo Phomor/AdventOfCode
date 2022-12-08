@@ -26,8 +26,8 @@ Console.WriteLine(forest.Max(p => p.Max(q => q.Score)));
 
 public class Tree
 {
-    public int X;//32
-    public int Y;//42
+    public int X;
+    public int Y;
     public readonly int Height;
     public int Score = 1;
 
@@ -48,7 +48,6 @@ public class Tree
         for (var i = X + 1; i < forest[Y].Length; i++)
         {
             if (forest[Y][i].X == 0 || forest[Y][i].Y == 0 || forest[Y][i].X == forest[Y].Length - 1 || forest[Y][i].Y == forest.Length - 1 || forest[Y][i].Height >= Height)
-            // if (forest[Y][i].Height >= Height || i == forest[Y].Length - 1)
             {
                 Score *= score;
                 break;
@@ -59,7 +58,6 @@ public class Tree
         for (var i = X - 1; i >= 0; i--)
         {
             if (forest[Y][i].X == 0 || forest[Y][i].Y == 0 || forest[Y][i].X == forest[Y].Length - 1 || forest[Y][i].Y == forest.Length - 1 || forest[Y][i].Height >= Height)
-            // if (forest[Y][i].Height >= Height || i == 0)
             {
                 Score *= score;
                 break;
@@ -70,7 +68,6 @@ public class Tree
         for (var i = Y + 1; i < forest[0].Length; i++)
         {
             if (forest[Y][i].X == 0 || forest[Y][i].Y == 0 || forest[Y][i].X == forest[Y].Length - 1 || forest[Y][i].Y == forest.Length - 1 || forest[i][X].Height >= Height)
-            // if (forest[i][X].Height >= Height || i == forest[0].Length - 1)
             {
                 Score *= score;
                 break;
@@ -81,7 +78,6 @@ public class Tree
         for (var i = Y - 1; i >= 0; i--)
         {
             if (forest[Y][i].X == 0 || forest[Y][i].Y == 0 || forest[Y][i].X == forest[Y].Length - 1 || forest[Y][i].Y == forest.Length - 1 || forest[i][X].Height >= Height)
-            // if (forest[i][X].Height >= Height || i == 0)
             {
                 Score *= score;
                 break;
