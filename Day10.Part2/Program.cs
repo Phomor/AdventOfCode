@@ -30,11 +30,11 @@ public class CPU
                 index--;
                 if (X >= index - 1 && X <= index + 1)
                 {
-                    Output.Append('#');
+                    Output.Append('█');
                 }
                 else
                 {
-                    Output.Append('.');
+                    Output.Append(' ');
                 }
                 if (cycle % 40 == 0)
                 {
