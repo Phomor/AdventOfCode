@@ -96,7 +96,7 @@ public class Monke
     public long Inspect(long factor)
     {
         InspectionCount++;
-        var item = Items.Dequeue() % factor;
+        var item = Items.Dequeue();
         item = Operation(item);
         return item % factor;
     }
