@@ -1,7 +1,7 @@
 ﻿var lines = File.ReadAllLines("input");
+Tile start = null!;
 Tile end = null!;
 var tiles = new Tile[lines.Length][];
-var startTiles = new List<Tile>();
 for (var y = 0; y < lines.Length; y++)
 {
     tiles[y] = new Tile[lines[y].Length];
@@ -11,16 +11,13 @@ for (var y = 0; y < lines.Length; y++)
         tiles[y][x] = new Tile();
         if (c == 'S')
         {
+            start = tiles[y][x];
             c = 'a';
         }
         if (c == 'E')
         {
             end = tiles[y][x];
             c = 'z';
-        }
-        if (c == 'a')
-        {
-            startTiles.Add(tiles[y][x]);
         }
         tiles[y][x].Height = c;
         tiles[y][x].Coordinates = (y, x);
@@ -34,36 +31,27 @@ foreach (var tileList in tiles)
     }
 }
 
-var minSteps = int.MaxValue;
-foreach (var start in startTiles)
+var queue = new Queue<Tile>();
+queue.Enqueue(start);
+start.Done = true;
+start.ShortestDistance = 0;
+while (queue.Count > 0)
 {
-    var queue = new Queue<Tile>();
-    queue.Enqueue(start);
-    start.Done = true;
-    start.ShortestDistance = 0;
-    while (queue.Count > 0)
+    var current = queue.Dequeue();
+    current.Done = true;
+    current.Neighbours.ForEach(p =>
     {
-        var current = queue.Dequeue();
-        current.Done = true;
-        current.Neighbours.ForEach(p =>
+        if (!p.Done)
         {
-            if (!p.Done)
+            if (p.ShortestDistance > current.ShortestDistance + 1)
             {
-                if (p.ShortestDistance > current.ShortestDistance + 1)
-                {
-                    p.ShortestDistance = current.ShortestDistance + 1;
-                }
-
-                p.Done = true;
-                queue.Enqueue(p);
+                p.ShortestDistance = current.ShortestDistance + 1;
             }
-        });
-    }
 
-    if (end.ShortestDistance < minSteps)
-    {
-        minSteps = end.ShortestDistance;
-    }
+            p.Done = true;
+            queue.Enqueue(p);
+        }
+    });
 }
 Console.WriteLine(end.ShortestDistance);
 
