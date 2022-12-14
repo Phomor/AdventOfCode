@@ -43,17 +43,17 @@ while ((line = sr.ReadLine()) != null)
     }
 }
 
-// ground starts at highestY + 2, first sand will stay on that - 1 == highest + 1
+// ground starts at highestY + 2, first sand will stay on that - 1 == highestY + 1
 var highestY = coords.Max(p => p.y) + 1;
 
 var (x, y) = (500, 0);
 while (!coords.Contains((500, 0)))
 {
-    // no solid block below this one, falls into the abyss
-    if (!coords.Any(p => p.x == x && p.y > y))
+    // reached the bottom, stays there
+    if (y == highestY)
     {
         score++;
-        coords.Add((x, highestY));
+        coords.Add((x, y));
         x = 500;
         y = 0;
     }
