@@ -43,6 +43,7 @@ while ((line = sr.ReadLine()) != null)
     }
 }
 
+// ground starts at highestY + 2, first sand will stay on that - 1 == highest + 1
 var highestY = coords.Max(p => p.y) + 1;
 
 var (x, y) = (500, 0);
